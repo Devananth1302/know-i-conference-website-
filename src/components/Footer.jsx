@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Globe, Server } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 const Footer = () => {
@@ -8,45 +8,48 @@ const Footer = () => {
       <div className="container">
         <div className="footer-main">
           <div className="footer-brand-hub">
-            <Link to="hero" smooth={true} className="footer-logo">
-              <img src="/logo.png" alt="ICICRCET'26 Logo" className="logo-img-footer" />
-            </Link>
+            <div className="footer-logos-group">
+              <Link to="hero" smooth={true} className="footer-logo">
+                <img src="/logo.png" alt="ICICRCET'26" className="logo-img-footer-main" />
+              </Link>
+              <div className="sep-line-v-footer"></div>
+              <img src="/logo1.png" alt="SVCE" className="logo-img-footer-partner" />
+              <img src="/logo2.png" alt="AIMST" className="logo-img-footer-partner" />
+              <img src="/know i.jpg" alt="KNOW-I" className="logo-img-footer-partner" />
+            </div>
             <p className="footer-tagline">
               2nd International Conference on Innovative Computing, Research and Cutting Edge Technologies. Catalyzing global research through elite academic collaboration.
             </p>
-            <div className="social-rack">
-              <a href="#" className="soc-link pink"><Facebook size={20} /></a>
-              <a href="#" className="soc-link blue"><Twitter size={20} /></a>
-              <a href="#" className="soc-link purple"><Instagram size={20} /></a>
-              <a href="#" className="soc-link lime"><Linkedin size={20} /></a>
-            </div>
+
           </div>
 
           <div className="footer-info-rack">
             <div className="info-col">
               <h5>NAVIGATION</h5>
-              <Link to="about" smooth={true}>About Conference</Link>
-              <Link to="tracks" smooth={true}>Innovation Tracks</Link>
-              <Link to="dates" smooth={true}>Deadlines</Link>
-              <Link to="committee" smooth={true}>Leadership</Link>
+              <Link to="about" smooth={true}>About</Link>
+              <Link to="tracks" smooth={true}>Tracks</Link>
+              <Link to="timeline" smooth={true}>Timeline</Link>
+              <Link to="committee" smooth={true}>Committee</Link>
+              <Link to="contact" smooth={true}>Contact</Link>
             </div>
 
-            <div className="info-col address-col">
+            <a 
+              href="https://maps.app.goo.gl/HTRYcR8ztLW7QQnU8" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="info-col address-col"
+              style={{ display: 'block', textDecoration: 'none' }}
+            >
               <h5>VENUE</h5>
-              <p>SRI VENKATESWARA COLLEGE OF ENGINEERING</p>
-              <p>POST BAG NO. 1, PENNALUR</p>
-              <p>SRIPERUMBUDUR, TAMIL NADU - 602117</p>
-            </div>
+              <p>SRI VENKATESWARA COLLEGE OF ENGINEERING (AUTONOMOUS)</p>
+              <p>POST BAG NO. 1, PENNALUR VILLAGE,</p>
+              <p>CHENNAI - BENGALURU HIGHWAY,</p>
+              <p>SRIPERUMBUDUR - 602117, TAMIL NADU, INDIA</p>
+            </a>
           </div>
         </div>
 
-        <div className="footer-bottom-bar">
-          <p>© 2026 ICICRCET CONFERENCE. ALL RIGHTS RESERVED.</p>
-          <div className="svce-tag">
-            <Server size={14} />
-            <span>POWERED BY DEPT. OF CSE, SVCE</span>
-          </div>
-        </div>
+
       </div>
 
       <style jsx>{`
@@ -71,10 +74,31 @@ const Footer = () => {
           cursor: pointer;
         }
 
-        .logo-img-footer {
-          height: 60px;
+        .footer-logos-group {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .logo-img-footer-main, .logo-img-footer-partner {
+          height: 40px;
           width: auto;
           object-fit: contain;
+          background: white;
+          padding: 4px;
+          border-radius: 6px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .logo-img-footer-main {
+          height: 45px;
+        }
+
+        .sep-line-v-footer {
+          width: 1px;
+          height: 30px;
+          background: var(--glass-border);
         }
 
         .footer-tagline {

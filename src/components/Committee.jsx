@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Globe, User, ShieldCheck, Mail } from 'lucide-react';
+import { User, Mail } from 'lucide-react';
 
 const committee = {
-  chiefPatrons: [
-    { name: "DR. A. C. MUTHIAH", role: "CHAIRMAN, GOVERNING COUNCIL", org: "SVCE", color: "var(--neon-pink)", initials: "AM", image: "/staffs/a c muthaiah.png" },
-    { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" },
-    { name: "DR. M. SIVANANDHAM", role: "SECRETARY", org: "SVEHT", color: "var(--neon-purple)", initials: "MS", image: "/staffs/sivanandham.png" }
-  ],
   patron: [
+    { name: "DR. A. C. MUTHIAH", role: "CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-pink)", initials: "AM", image: "/staffs/a c muthaiah.png" }
+  ],
+  chiefPatrons: [
+    { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" },
+    { name: "DR. M. SIVANANDHAM", role: "SECRETARY", org: "SVCE", color: "var(--neon-purple)", initials: "MS", image: "/staffs/sivanandham.png" },
     { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
   ],
   convenors: [
@@ -17,9 +17,17 @@ const committee = {
   ],
   coordinators: [
     { name: "MS. R. K. KAPILA VANI", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-blue)", initials: "KV", image: "/staffs/Kapila Vani.png" },
+    { name: "MR. V. KRISHNAMOORTHY", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-lime)", initials: "VK", image: "/staffs/Krishnamoorthy.png" },
     { name: "MR. P. SELVAMANI", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-pink)", initials: "PS", image: "/staffs/Selvamani.png" },
-    { name: "MS. V. RADHA", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-purple)", initials: "VR", image: "/staffs/radha.webp" },
-    { name: "MR. V. KRISHNAMOORTHY", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-lime)", initials: "VK", image: "/staffs/Krishnamoorthy.png" }
+    { name: "MS. V. RADHA", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-purple)", initials: "VR", image: "/staffs/radha.webp" }
+  ],
+  studentCoordinators: [
+    { name: "ADITHI KALYANARAMAN", role: "B.E CS / III YEAR", org: "SVCE", color: "var(--neon-pink)", initials: "AK" },
+    { name: "ARUNIMA MURALITHARAN", role: "B.Tech. AD / IV YEAR", org: "SVCE", color: "var(--neon-blue)", initials: "AM" },
+    { name: "CLARINDA SUSAN", role: "B.Tech. AD / IV YEAR", org: "SVCE", color: "var(--neon-lime)", initials: "CS" },
+    { name: "DEVANANTH V", role: "B.Tech. AD / III YEAR", org: "SVCE", color: "var(--neon-blue)", initials: "DV" },
+    { name: "KEERTHANA G", role: "B.E. CS / III YEAR", org: "SVCE", color: "var(--neon-purple)", initials: "KG" },
+    { name: "MADHUSHREE S N", role: "B.E. CS / III YEAR", org: "SVCE", color: "var(--neon-pink)", initials: "MN" }
   ]
 };
 
@@ -43,7 +51,6 @@ const MemberCard = ({ member }) => (
           </div>
         )}
         <div className="avatar-ring" style={{ borderColor: member.color }}></div>
-        <div className="verified-badge"><ShieldCheck size={12} /></div>
       </div>
     </div>
 
@@ -58,11 +65,7 @@ const MemberCard = ({ member }) => (
         <span>COMPUTER SCIENCE AND ENGINEERING</span>
       </div>
 
-      <div className="member-actions">
-        <a href="#" className="action-btn"><Linkedin size={16} /></a>
-        <a href="#" className="action-btn"><Mail size={16} /></a>
-        <a href="#" className="action-btn"><Globe size={16} /></a>
-      </div>
+
     </div>
 
     <div className="card-decor"></div>
@@ -90,19 +93,19 @@ const Committee = () => {
         </div>
 
         <div className="committee-hierarchy">
-          {/* Chief Patrons */}
-          <div className="hierarchy-row">
-            <div className="row-label">CHIEF PATRONS</div>
-            <div className="members-grid triple">
-              {committee.chiefPatrons.map((m, i) => <MemberCard key={i} member={m} />)}
-            </div>
-          </div>
-
           {/* Patron */}
           <div className="hierarchy-row">
             <div className="row-label">PATRON</div>
             <div className="members-grid single">
               {committee.patron.map((m, i) => <MemberCard key={i} member={m} />)}
+            </div>
+          </div>
+
+          {/* Chief Patrons */}
+          <div className="hierarchy-row">
+            <div className="row-label">CHIEF PATRONS</div>
+            <div className="members-grid triple">
+              {committee.chiefPatrons.map((m, i) => <MemberCard key={i} member={m} />)}
             </div>
           </div>
 
@@ -119,6 +122,14 @@ const Committee = () => {
             <div className="row-label">COORDINATORS</div>
             <div className="members-grid quad">
               {committee.coordinators.map((m, i) => <MemberCard key={i} member={m} />)}
+            </div>
+          </div>
+
+          {/* Student Coordinators */}
+          <div className="hierarchy-row">
+            <div className="row-label">STUDENT COORDINATORS</div>
+            <div className="members-grid quad">
+              {committee.studentCoordinators.map((m, i) => <MemberCard key={i} member={m} />)}
             </div>
           </div>
         </div>

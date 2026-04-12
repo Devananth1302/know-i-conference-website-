@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowRight, Download, Laptop, Shield, User, Brain } from 'lucide-react';
+import { Sparkles, ArrowRight, Download, Laptop, User, Brain } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -18,7 +18,7 @@ const Hero = () => {
           className="hero-badge"
         >
           <Sparkles size={16} className="text-yellow-400" />
-          <span>APRIL 16, 2026 • VIRTUAL MODE</span>
+          <span>MAY 5, 2026 • HYBRID MODE</span>
         </motion.div>
 
         <motion.div
@@ -27,6 +27,7 @@ const Hero = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <h1 className="hero-main-title">
+            <span className="title-top">SRI VENKATESWARA COLLEGE OF ENGINEERING</span>
             <span className="gradient-text title-focus">ICICRCET'26</span>
           </h1>
         </motion.div>
@@ -40,23 +41,36 @@ const Hero = () => {
           2nd International Conference on Innovative Computing, Research and Cutting Edge Technologies in Computer Science and Engineering
         </motion.p>
 
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="hero-subline"
+        >
+          In association with AIMST University Malaysia
+        </motion.p>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-actions"
         >
-          <button className="btn-modern btn-primary">
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSco5TtEb430BAfDCEh9kOXTKZiqmcAjEeBOoe8zd3fbT9vU0w/viewform" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-modern btn-primary"
+          >
             RESERVE YOUR SPOT <ArrowRight size={20} />
-          </button>
-          <div className="brochure-btn">
+          </a>
+          <a href="/ICICRCET'26  Brochure.pdf" download className="brochure-btn">
             <div className="brochure-icon">
               <Download size={20} />
             </div>
             <span>DOWNLOAD BROCHURE</span>
-          </div>
+          </a>
         </motion.div>
-
 
       </div>
 
@@ -154,9 +168,20 @@ const Hero = () => {
           max-width: 800px;
           font-size: clamp(1rem, 2vw, 1.25rem);
           color: var(--text-secondary);
-          margin-bottom: 4rem;
+          margin-bottom: 1rem;
           line-height: 1.8;
           font-weight: 500;
+        }
+
+        .hero-subline {
+          max-width: 800px;
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          color: var(--neon-blue);
+          margin-bottom: 4rem;
+          line-height: 1.8;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
         }
 
         .hero-actions {
@@ -231,7 +256,7 @@ const Hero = () => {
           color: white;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .title-focus { font-size: 4.5rem; letter-spacing: -2px; }
           .hero-badge { font-size: 0.7rem; padding: 0.5rem 1.2rem; margin-bottom: 2rem; }
           .hero-tagline { margin-bottom: 3rem; }

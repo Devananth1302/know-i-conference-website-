@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X, Globe, Brain } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -21,9 +21,23 @@ const Navbar = () => {
     { name: 'Contact', to: 'contact' },
   ];
 
+  const REG_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSco5TtEb430BAfDCEh9kOXTKZiqmcAjEeBOoe8zd3fbT9vU0w/viewform";
+
   return (
     <nav className={`fixed-nav ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
+        <div className="nav-brand">
+          <div className="nav-logos-group">
+            <Link to="hero" smooth={true} className="main-nav-logo">
+              <img src="/logo.png" alt="ICICRCET'26" className="nav-logo-main" />
+            </Link>
+            <div className="sep-line-v"></div>
+            <img src="/logo1.png" alt="SVCE" className="nav-logo-partner" />
+            <img src="/logo2.png" alt="AIMST" className="nav-logo-partner" />
+            <img src="/know i.jpg" alt="KNOW-I" className="nav-logo-partner" />
+          </div>
+        </div>
+
         <div className="nav-desktop">
           <div className="nav-links-wrap">
             {navLinks.map((link) => (
@@ -43,18 +57,14 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="nav-partner-logos">
-            <img src="/logo1.png" alt="SVCE" className="nav-logo-partner" />
-            <img src="/logo2.png" alt="AMIST" className="nav-logo-partner" />
-            <Link to="hero" smooth={true} duration={800} className="nav-logo-item know-i">
-              <Brain size={28} className="text-[#ff0080]" />
-              <span className="know-i-text">KNOW-I</span>
-            </Link>
-          </div>
-
-          <button className="btn-modern btn-primary nav-btn">
+          <a 
+            href={REG_LINK}
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-modern btn-primary nav-btn"
+          >
             REGISTER NOW
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -73,6 +83,9 @@ const Navbar = () => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="mobile-menu"
           >
+            <div className="mobile-menu-header">
+               <span className="mobile-header-text">CONFERENCE PAPER PRESENTATION</span>
+            </div>
             <div className="mobile-menu-links">
               {navLinks.map((link) => (
                 <Link
@@ -87,9 +100,14 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <button className="btn-modern btn-primary w-full mt-4">
+              <a 
+                href={REG_LINK}
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-modern btn-primary w-full mt-4 text-center"
+              >
                 REGISTER NOW
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
@@ -107,9 +125,9 @@ const Navbar = () => {
         }
 
         .fixed-nav.scrolled {
-          padding: 1rem 0;
-          background: rgba(2, 2, 5, 0.8);
+          background: rgba(2, 2, 5, 0.85);
           backdrop-filter: blur(20px);
+          padding: 1.2rem 0;
           border-bottom: 1px solid var(--glass-border);
         }
 
@@ -119,7 +137,10 @@ const Navbar = () => {
           align-items: center;
         }
 
-
+        .nav-brand {
+          display: flex;
+          align-items: center;
+        }
 
         .nav-desktop {
           display: flex;
@@ -127,56 +148,65 @@ const Navbar = () => {
           gap: 3rem;
         }
 
-        .nav-partner-logos {
-          display: flex;
-          align-items: center;
-          gap: 2.5rem;
-          margin: 0 2rem;
+        @media (max-width: 1024px) {
+          .nav-desktop { display: none; }
+          .fixed-nav { padding: 1.5rem 0; }
         }
 
-        .nav-logo-partner {
-          height: 60px;
+        .nav-logos-group {
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+        }
+
+        .main-nav-logo {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        .nav-logo-main, .nav-logo-partner {
+          height: 40px;
           width: auto;
-          filter: none;
-          transition: transform 0.3s ease;
+          transition: all 0.4s var(--ease-expo);
+          border-radius: 6px;
+          padding: 4px;
+          background: #fff;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+          opacity: 0.92;
         }
 
-        .nav-logo-item.know-i {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: white;
-          font-weight: 800;
-          font-family: var(--font-heading);
-          font-size: 1.1rem;
+        .nav-logo-main:hover, .nav-logo-partner:hover {
+          transform: translateY(-2px);
+          opacity: 1;
+          box-shadow: 0 8px 25px rgba(0, 234, 255, 0.4);
+          border-color: var(--neon-blue);
         }
 
-        .know-i-text {
-          letter-spacing: 1px;
+        .nav-logo-main {
+          height: 48px;
         }
 
-        .nav-logo-partner:hover, .nav-logo-item:hover {
-          transform: scale(1.05);
+        .sep-line-v {
+          width: 1px;
+          height: 30px;
+          background: var(--glass-border);
         }
 
         .nav-links-wrap {
           display: flex;
-          align-items: center;
-          gap: 2rem;
-        }
-
-        @media (max-width: 1024px) {
-          .nav-desktop { display: none; }
+          gap: 2.5rem;
         }
 
         .nav-link {
-          font-weight: 600;
-          font-size: 0.9rem;
-          color: var(--text-secondary);
-          cursor: pointer;
           position: relative;
+          color: var(--text-secondary);
+          font-weight: 700;
+          font-size: 0.9rem;
+          letter-spacing: 0.05em;
           text-transform: uppercase;
-          letter-spacing: 0.1em;
+          cursor: pointer;
           transition: color 0.3s ease;
         }
 
@@ -201,6 +231,7 @@ const Navbar = () => {
         .nav-btn {
           padding: 0.7rem 1.8rem;
           font-size: 0.8rem;
+          text-decoration: none;
         }
 
         .mobile-toggle {
@@ -228,6 +259,21 @@ const Navbar = () => {
           border-left: 1px solid var(--glass-border);
         }
 
+        .mobile-menu-header {
+          margin-bottom: 3.5rem;
+          padding-bottom: 1.5rem;
+          border-bottom: 1px solid var(--glass-border);
+        }
+
+        .mobile-header-text {
+          font-family: var(--font-heading);
+          font-weight: 900;
+          font-size: 0.9rem;
+          letter-spacing: 0.1em;
+          color: var(--neon-blue);
+          text-transform: uppercase;
+        }
+
         .mobile-menu-links {
           display: flex;
           flex-direction: column;
@@ -237,12 +283,16 @@ const Navbar = () => {
         .mobile-link {
           font-size: 1.5rem;
           font-weight: 800;
-          color: white;
-          font-family: var(--font-heading);
+          color: var(--text-secondary);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          cursor: pointer;
+          transition: color 0.3s ease;
         }
 
-        .w-full { width: 100%; }
-        .mt-4 { margin-top: 1rem; }
+        .mobile-link:hover {
+          color: var(--neon-blue);
+        }
       `}</style>
     </nav>
   );

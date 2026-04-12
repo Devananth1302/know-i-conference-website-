@@ -46,8 +46,7 @@ const Contact = () => {
               <div className="channel-icon bg-blue"><Phone size={30} /></div>
               <div className="channel-info">
                 <h4>CONTACT</h4>
-                <p>+91 9941112928</p>
-                <a href="tel:+919941112928" className="channel-link">CALL NOW <ExternalLink size={14} /></a>
+                <p>99411 12928</p>
               </div>
             </motion.div>
 
@@ -61,8 +60,8 @@ const Contact = () => {
               <div className="channel-icon bg-purple"><MapPin size={30} /></div>
               <div className="channel-info">
                 <h4>LOCATION</h4>
-                <p>DEPT. OF CSE, SVCE, CHENNAI, INDIA</p>
-                <a href="https://maps.google.com" target="_blank" className="channel-link">VIEW MAP <ExternalLink size={14} /></a>
+                <p style={{fontSize: '0.9rem'}}>SVCE, PENNALUR, SRIPERUMBUDUR - 602117</p>
+                <a href="https://maps.app.goo.gl/HTRYcR8ztLW7QQnU8" target="_blank" rel="noopener noreferrer" className="channel-link">VIEW MAP <ExternalLink size={14} /></a>
               </div>
             </motion.div>
           </div>

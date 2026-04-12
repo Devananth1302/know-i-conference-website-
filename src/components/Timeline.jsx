@@ -4,30 +4,30 @@ import { Calendar, Timer, Bell, CheckCircle } from 'lucide-react';
 
 const dates = [
   {
-    date: "APRIL 05, 2026",
+    date: "26th APRIL 2026",
     title: "Submission Deadline",
     desc: "Last call for full paper submissions for review.",
     accent: "var(--neon-pink)",
     icon: <Timer size={24} />
   },
   {
-    date: "APRIL 09, 2026",
+    date: "29th APRIL 2026",
     title: "Selection Intimation",
     desc: "Notification of paper acceptance status.",
     accent: "var(--neon-blue)",
     icon: <Bell size={24} />
   },
   {
-    date: "APRIL 11, 2026",
+    date: "02nd MAY 2026",
     title: "Registration Closing",
     desc: "Final window to secure your spot for the conference.",
     accent: "var(--neon-purple)",
     icon: <CheckCircle size={24} />
   },
   {
-    date: "APRIL 16, 2026",
-    title: "Conference",
-    desc: "VIRTUAL MODE",
+    date: "05th MAY 2026",
+    title: "Conference Date",
+    desc: "Hybrid Mode - In person and Online.",
     accent: "var(--neon-lime)",
     icon: <Calendar size={24} />,
     glow: true
