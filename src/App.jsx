@@ -6,7 +6,7 @@ import Tracks from './components/Tracks';
 import Timeline from './components/Timeline';
 import Committee from './components/Committee';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Timeline />
       <Committee />
       <Contact />
-      <Footer />
+
     </div>
   );
 }

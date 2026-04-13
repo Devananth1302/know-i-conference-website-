@@ -16,9 +16,7 @@ const Contact = () => {
             >
               GET IN <span className="gradient-text">TOUCH</span>
             </motion.h2>
-            <p className="contact-desc">
-              Connect with our secretariat for sponsorship, registration, or academic inquiries.
-            </p>
+
           </div>
 
           <div className="contact-channels">
@@ -46,7 +44,8 @@ const Contact = () => {
               <div className="channel-icon bg-blue"><Phone size={30} /></div>
               <div className="channel-info">
                 <h4>CONTACT</h4>
-                <p>99411 12928</p>
+                <p style={{ marginBottom: '0.5rem' }}>Name: Devananth V</p>
+                <p>Phone No : 9043723755</p>
               </div>
             </motion.div>
 
@@ -60,7 +59,7 @@ const Contact = () => {
               <div className="channel-icon bg-purple"><MapPin size={30} /></div>
               <div className="channel-info">
                 <h4>LOCATION</h4>
-                <p style={{fontSize: '0.9rem'}}>SVCE, PENNALUR, SRIPERUMBUDUR - 602117</p>
+                <p style={{ fontSize: '0.9rem' }}>SVCE, PENNALUR, SRIPERUMBUDUR - 602117</p>
                 <a href="https://maps.app.goo.gl/HTRYcR8ztLW7QQnU8" target="_blank" rel="noopener noreferrer" className="channel-link">VIEW MAP <ExternalLink size={14} /></a>
               </div>
             </motion.div>

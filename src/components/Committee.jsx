@@ -1,33 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Mail } from 'lucide-react';
+import { User, Mail, Linkedin } from 'lucide-react';
 
 const committee = {
   patron: [
     { name: "DR. A. C. MUTHIAH", role: "CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-pink)", initials: "AM", image: "/staffs/a c muthaiah.png" }
   ],
   chiefPatrons: [
-    { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" },
-    { name: "DR. M. SIVANANDHAM", role: "SECRETARY", org: "SVCE", color: "var(--neon-purple)", initials: "MS", image: "/staffs/sivanandham.png" },
-    { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
+    { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" },
+    { name: "DR. M. SIVANANDHAM", role: "SECRETARY, SVEHT", org: "SVCE", color: "var(--neon-purple)", initials: "MS", image: "/staffs/sivanandham.png" },
+    { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL , SVCE", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
   ],
   convenors: [
-    { name: "DR. R. ANITHA", role: "HOD / CSE", org: "SVCE", color: "var(--neon-lime)", initials: "RA", image: "/staffs/Anitha.png" },
-    { name: "DR. N. RAJGANESH", role: "AHOD / CSE", org: "SVCE", color: "#ff8c00", initials: "NR", image: "/staffs/Rajganesh.png" }
+    { name: "DR. R. ANITHA", role: "CONVENOR", dept: "HOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "RA", image: "/staffs/Anitha.png", linkedin: "https://www.linkedin.com/in/anithabalajim/" },
+    { name: "DR. N. RAJGANESH", role: "CONVENOR", dept: "AHOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "NR", image: "/staffs/Rajganesh.png", linkedin: "https://www.linkedin.com/in/dr-rajganesh-n-77b00a224/" }
   ],
   coordinators: [
-    { name: "MS. R. K. KAPILA VANI", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-blue)", initials: "KV", image: "/staffs/Kapila Vani.png" },
-    { name: "MR. V. KRISHNAMOORTHY", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-lime)", initials: "VK", image: "/staffs/Krishnamoorthy.png" },
-    { name: "MR. P. SELVAMANI", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-pink)", initials: "PS", image: "/staffs/Selvamani.png" },
-    { name: "MS. V. RADHA", role: "ASST. PROFESSOR", org: "SVCE", color: "var(--neon-purple)", initials: "VR", image: "/staffs/radha.webp" }
+    { name: "MS. R. K. KAPILA VANI", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-blue)", initials: "KV", image: "/staffs/Kapila Vani.png", linkedin: "https://www.linkedin.com/in/r-k-kapila-vani-b751b492/" },
+    { name: "MR. P. SELVAMANI", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-pink)", initials: "PS", image: "/staffs/Selvamani.png", linkedin: "https://www.linkedin.com/in/selvamani-p-22051a1bb/" },
+    { name: "MS. V. RADHA", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-purple)", initials: "VR", image: "/staffs/radha.webp", linkedin: "https://www.linkedin.com/in/radha-v-3186a8214/" },
+    { name: "MR. V. KRISHNAMOORTHY", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "VK", image: "/staffs/Krishnamoorthy.png", linkedin: "https://www.linkedin.com/in/krishnamoorthy-v-1bb90a118/" }
   ],
   studentCoordinators: [
-    { name: "ADITHI KALYANARAMAN", role: "B.E CS / III YEAR", org: "SVCE", color: "var(--neon-pink)", initials: "AK" },
-    { name: "ARUNIMA MURALITHARAN", role: "B.Tech. AD / IV YEAR", org: "SVCE", color: "var(--neon-blue)", initials: "AM" },
-    { name: "CLARINDA SUSAN", role: "B.Tech. AD / IV YEAR", org: "SVCE", color: "var(--neon-lime)", initials: "CS" },
-    { name: "DEVANANTH V", role: "B.Tech. AD / III YEAR", org: "SVCE", color: "var(--neon-blue)", initials: "DV" },
-    { name: "KEERTHANA G", role: "B.E. CS / III YEAR", org: "SVCE", color: "var(--neon-purple)", initials: "KG" },
-    { name: "MADHUSHREE S N", role: "B.E. CS / III YEAR", org: "SVCE", color: "var(--neon-pink)", initials: "MN" }
+    { name: "ARUNIMA MURALITHARAN", role: "B.Tech. AD / IV YEAR", org: "SVCE", color: "var(--neon-blue)", initials: "AM", image: "/students/arunima.jpeg", linkedin: "https://www.linkedin.com/in/aru04/" },
+    { name: "ADITHI KALYANARAMAN", role: "B.E CS / III YEAR", org: "SVCE", color: "var(--neon-pink)", initials: "AK", image: "/students/adithi.jpeg", linkedin: "https://www.linkedin.com/in/adithikalyanaraman/" },
+    { name: "CLARINDA SUSAN", role: "B.Tech. AD / IV YEAR", org: "SVCE", color: "var(--neon-lime)", initials: "CS", image: "/students/susan.jpeg", linkedin: "https://www.linkedin.com/in/clarinda-susan-158898259/" },
+    { name: "DEVANANTH V", role: "B.Tech. AD / III YEAR", org: "SVCE", color: "var(--neon-blue)", initials: "DV", image: "/students/deva.jpeg", linkedin: "https://www.linkedin.com/in/devananth-v-a231802bb/" },
+    { name: "KEERTHANA G", role: "B.E. CS / III YEAR", org: "SVCE", color: "var(--neon-purple)", initials: "KG", image: "/students/keerthana.jpeg" },
+    { name: "MADHUSHREE S N", role: "B.E. CS / III YEAR", org: "SVCE", color: "var(--neon-pink)", initials: "MN", image: "/students/madhu.jpeg", linkedin: "https://www.linkedin.com/in/madhushree-naga/" }
   ]
 };
 
@@ -55,17 +55,18 @@ const MemberCard = ({ member }) => (
     </div>
 
     <div className="member-details">
-      <div className="member-role-tag" style={{ background: `${member.color}15`, color: member.color }}>
-        {member.role}
-      </div>
       <h3 className="member-name">{member.name}</h3>
-      <div className="member-org-info">
-        <span>{member.org}</span>
-        <div className="sep-dot"></div>
-        <span>COMPUTER SCIENCE AND ENGINEERING</span>
+      <div className="member-role-tag" style={{ background: `${member.color}15`, color: member.color, marginTop: '0.8rem' }}>
+        {member.dept && <div className="member-dept-title">{member.dept}</div>}
+        <div className="member-role-title">{member.role}</div>
       </div>
-
-
+      {member.linkedin && (
+        <div className="member-social pt-4">
+          <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="social-icon-btn" style={{ color: member.color }}>
+            <Linkedin size={20} />
+          </a>
+        </div>
+      )}
     </div>
 
     <div className="card-decor"></div>
@@ -82,9 +83,9 @@ const Committee = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h4 className="vibrant-label">ORGANIZING BODY</h4>
+
             <h2 className="title-huge">
-              LEADERSHIP <span className="gradient-text">FORCE</span>
+              ORGANIZING <span className="gradient-text">COMMITTEE</span>
             </h2>
             <p className="section-intro">
               The visionaries and academic leaders steering ICICRCET'26 towards global impact.
@@ -127,7 +128,7 @@ const Committee = () => {
 
           {/* Student Coordinators */}
           <div className="hierarchy-row">
-            <div className="row-label">STUDENT COORDINATORS</div>
+            <div className="row-label">STUDENT COORDINATORS </div>
             <div className="members-grid quad">
               {committee.studentCoordinators.map((m, i) => <MemberCard key={i} member={m} />)}
             </div>
@@ -159,13 +160,14 @@ const Committee = () => {
         }
 
         .row-label {
-          font-weight: 800;
+          font-weight: 900;
           letter-spacing: 0.6em;
-          color: var(--text-secondary);
-          font-size: 0.75rem;
+          color: white;
+          font-size: 1.6rem;
           text-align: center;
-          margin-bottom: 3.5rem;
+          margin-bottom: 5rem;
           position: relative;
+          text-shadow: 0 0 25px rgba(0, 234, 255, 0.6);
         }
 
         .row-label::after {
@@ -191,8 +193,11 @@ const Committee = () => {
         .single { grid-template-columns: 1fr; max-width: 500px; }
         .quad { grid-template-columns: repeat(2, 1fr); }
 
+        @media (min-width: 900px) {
+          .quad { grid-template-columns: repeat(3, 1fr); }
+        }
         @media (min-width: 1200px) {
-           .quad { grid-template-columns: repeat(4, 1fr); }
+          .quad { grid-template-columns: repeat(4, 1fr); }
         }
 
         .member-card {
@@ -218,8 +223,8 @@ const Committee = () => {
 
         .avatar-frame {
           position: relative;
-          width: 100px;
-          height: 100px;
+          width: 130px;
+          height: 130px;
         }
 
         .avatar-initials {
@@ -293,21 +298,43 @@ const Committee = () => {
         }
 
         .member-role-tag {
-          display: inline-block;
-          padding: 0.4rem 1.2rem;
-          border-radius: 100px;
-          font-size: 0.7rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          padding: 0.6rem 1.4rem;
+          border-radius: 12px;
+          font-size: 0.75rem;
           font-weight: 800;
-          letter-spacing: 0.1em;
-          margin-bottom: 1rem;
+          letter-spacing: 0.05em;
           text-transform: uppercase;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        .member-dept-title {
+          font-size: 0.85rem;
+          font-weight: 900;
+          color: white;
+        }
+
+        .member-role-title {
+          font-size: 0.7rem;
+          opacity: 0.9;
+          font-weight: 700;
+          letter-spacing: 0.1em;
         }
 
         .member-name {
-          font-size: 1.4rem;
+          font-size: clamp(0.9rem, 1.4vw, 1.15rem);
           font-weight: 800;
           margin-bottom: 0.8rem;
           line-height: 1.2;
+          white-space: nowrap;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          letter-spacing: -0.02em;
         }
 
         .member-org-info {
@@ -331,6 +358,23 @@ const Committee = () => {
         .member-actions {
           display: flex;
           gap: 1.2rem;
+        }
+
+        .social-icon-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.05);
+          transition: all 0.3s ease;
+        }
+
+        .social-icon-btn:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-2px);
+          filter: brightness(1.2);
         }
 
         .action-btn {

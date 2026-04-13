@@ -35,7 +35,7 @@ const tracks = [
     id: "03",
     icon: <Cpu size={48} />,
     title: "High-Performance and Quantum Computing",
-    color: "#7a00ff",
+    color: "#00FFFF",
     topics: [
       "Parallel and Distributed Computing",
       "Cloud, Edge, and Heterogeneous Architectures",
@@ -131,9 +131,7 @@ const Tracks = () => {
             <h2 className="title-huge">
               CONFERENCE <span className="gradient-text">TRACKS</span>
             </h2>
-            <p className="section-intro-alt">
-              Original research contributions are invited in these eight focal areas.
-            </p>
+
           </motion.div>
         </div>
 
@@ -161,7 +159,7 @@ const Tracks = () => {
               <div className="track-expertise">
                 {track.topics.map((topic, i) => (
                   <div key={i} className="expertise-item">
-                    <CheckCircle2 size={16} className="text-[#00eaff]" />
+                    <span className="bullet-point">•</span>
                     <span>{topic}</span>
                   </div>
                 ))}
@@ -273,7 +271,17 @@ const Tracks = () => {
           color: var(--text-secondary);
         }
 
+        .bullet-point {
+          color: var(--track-accent);
+          font-size: 1.2rem;
+          line-height: 1;
+        }
+
         .track-strip:hover .expertise-item {
+          color: white;
+        }
+
+        .track-strip:hover .bullet-point {
           color: white;
         }
 

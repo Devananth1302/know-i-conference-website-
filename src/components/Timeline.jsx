@@ -20,7 +20,7 @@ const dates = [
   {
     date: "02nd MAY 2026",
     title: "Registration Closing",
-    desc: "Final window to secure your spot for the conference.",
+    desc: "Final window to complete your conference registration.",
     accent: "var(--neon-purple)",
     icon: <CheckCircle size={24} />
   },
@@ -71,7 +71,16 @@ const Timeline = () => {
                 </div>
 
                 <div className="date-content">
-                  <div className="date-stamp" style={{ color: item.accent }}>{item.date}</div>
+                  <div className="date-stamp" style={{ color: item.accent }}>
+                    {(() => {
+                      // Render date with superscript for suffixes (st, nd, rd, th)
+                      const match = item.date.match(/^(\d{1,2})(st|nd|rd|th) (.+)$/);
+                      if (match) {
+                        return <><span>{match[1]}</span><sup>{match[2]}</sup> {match[3]}</>;
+                      }
+                      return item.date;
+                    })()}
+                  </div>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
                 </div>

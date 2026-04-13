@@ -3,23 +3,27 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Target, Zap, Cpu, Globe, Award, ShieldCheck, School, Users, Presentation, Download } from 'lucide-react';
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState('conference');
+  const [activeTab, setActiveTab] = useState('college');
 
   const content = {
     college: {
       title: "ABOUT THE COLLEGE",
-      text: "Sri Venkateswara College of Engineering (Autonomous), a premier self-financing engineering college was established in the year 1985 and is managed by Sri Venkateswara Educational and Health Trust. The college offers 12 under-graduate programs and 7 postgraduate programs in Engineering and Technology. These programs are approved by AICTE and affiliated to Anna University, Chennai. The college attained autonomous status in the year 2016. The college is accredited by National Assessment and Accreditation Council (NAAC) with A+ Grade in the year 2022. The National Board of Accreditation has accredited many of the eligible programs. The college is an ISO 9001:2015 certified institution.",
+      text: "Sri Venkateswara College of Engineering (Autonomous), a premier self-financing engineering college, was established in 1985 and is managed by the Sri Venkateswara Educational and Health Trust. The college offers 12 undergraduate programs and 7 postgraduate programs in Engineering and Technology. These programs are approved by AICTE and affiliated with Anna University, Chennai. The college attained autonomous status in 2016 and was accredited by the National Assessment and Accreditation Council (NAAC) with an A+ Grade in 2022. The National Board of Accreditation has accredited many of the eligible programs. The college is an ISO 21001:2018 certified institution.",
       icon: <School size={24} />
-    },
-    conference: {
-      title: "ABOUT CONFERENCE",
-      text: "The 2nd International Conference on Innovative Computing Research and Cutting Edge Technologies in Computer Science and Engineering (ICICRCET'26) is an annual event that brings together researchers, scholars, and industry experts in Computer Science and Engineering. Organized by the Department of Computer Science and Engineering, Sri Venkateswara College of Engineering, in association with AIMST University Malaysia, the conference provides a platform for presenting innovative research, fostering industry-academia collaboration, and enhancing skill development among students and faculty. What began as a national conference has grown steadily in stature - over the past two years, it has evolved into a prestigious international platform, attracting contributions from researchers and institutions across the globe. The conference also facilitates the formal publication of selected works, with accepted papers finding their place in peer-reviewed proceedings, ensuring that the research presented reaches a wider academic audience and contributes meaningfully to the global body of knowledge.",
-      icon: <Presentation size={24} />
     },
     department: {
       title: "ABOUT THE DEPARTMENT",
-      text: "The Department of Computer Science and Engineering, established in 1985, has earned distinguished national and international recognition through the collective efforts of its dedicated faculty, committed support staff, and talented students. The department is equipped with state-of-the-art computing infrastructure and a team of highly qualified faculty specializing in cutting-edge domains such as Artificial Intelligence, Cloud Computing and Data Analytics. The department fosters a vibrant culture of research and innovation, actively organizing national and international conferences, workshops, technical seminars, and symposia. Through strong global academic collaborations and industry partnerships, it ensures students are exposed to a truly international learning experience. The department takes pride in a distinguished alumni network, including Padma Shri Prof. V. Kamakoti, Director of IIT Madras, a reflection of its enduring tradition of nurturing exceptional talent. The department proudly offers B.E. in Computer Science and Engineering, B.Tech. in Artificial Intelligence and Data Science, M.E. in Computer Science and Engineering, and Ph.D. programs - all committed to shaping technically excellent, ethically grounded, and socially responsible engineers for a rapidly evolving world.",
+      text: "The Department of Computer Science and Engineering, established in 1985, has earned distinguished national and international recognition through the collective efforts of its dedicated faculty, committed support staff, and talented students. The department is equipped with state-of-the-art computing infrastructure and a team of highly qualified faculty specializing in cutting-edge domains such as Artificial Intelligence, Augmented Reality and Virtual Reality, Cloud Computing and Data Analytics.The department fosters a vibrant culture of research and innovation, actively organizing national and international conferences, workshops, technical seminars, and symposia. Through strong global academic collaborations and industry partnerships, it ensures students are exposed to a truly international learning experience. The department takes pride in a distinguished alumni network, including Padma Shri Prof. V. Kamakoti, Director of IIT Madras and Vishisht Seva Medal Awardee Sri R Guruhari-Air Vice Marshal, Indian Air Force, a reflection of its enduring tradition of nurturing exceptional talent. The department proudly offers B.E. in Computer Science and Engineering, B.Tech. in Artificial Intelligence and Data Science, M.E. in Computer Science and Engineering, and Ph.D. programs - all committed to shaping technically excellent, ethically grounded, and socially responsible engineers for a rapidly evolving world.",
       icon: <Users size={24} />
+    },
+    conference: {
+      title: "ABOUT CONFERENCE",
+      text: (
+        <>
+          The 2<sup>nd</sup> International Conference on Innovative Computing Research and Cutting Edge Technologies in Computer Science and Engineering (ICICRCET'26) is an annual event that brings together researchers, scholars, and industry experts in Computer Science and Engineering. Organized by the Department of Computer Science and Engineering, Sri Venkateswara College of Engineering, in association with AIMST University Malaysia, the conference provides a platform for presenting innovative research, fostering industry-academia collaboration, and enhancing skill development among students and faculty. What began as a national conference has grown steadily in stature; over the past two years, it has evolved into a prestigious international platform, attracting contributions from researchers and institutions across the globe. The conference also facilitates the formal publication of selected works, with accepted papers placed in peer-reviewed proceedings, ensuring that the research presented reaches a wider academic audience and contributes meaningfully to the global body of knowledge.
+        </>
+      ),
+      icon: <Presentation size={24} />
     },
   };
 
@@ -35,7 +39,7 @@ const About = () => {
           >
             <h4 className="vibrant-label">ESTABLISHED INNOVATION</h4>
             <h2 className="title-huge">
-              ABOUT THE <span className="gradient-text">CONFERENCE</span>
+              ABOUT <span className="gradient-text">US</span>
             </h2>
           </motion.div>
 
@@ -83,7 +87,7 @@ const About = () => {
             </div>
             <div className="box-content">
               <h3>VISION</h3>
-              <p>To be a global leader in computer science through innovative research, exceptional education, and a collaborative ecosystem that empowers future innovators.</p>
+              <p>To gain national and global recognition as a leader in computer science and engineering driven by innovative research, outstanding education, and the accomplishments of our learners, supported by state-of-the-art resources and a collaborative environment.</p>
             </div>
           </motion.div>
 
@@ -100,9 +104,9 @@ const About = () => {
             <div className="box-content">
               <h3>MISSION</h3>
               <ul className="mission-list-alt">
-                <li>Foster an ecosystem for continuous learning and innovation.</li>
-                <li>Empower learners with skills to address societal needs.</li>
-                <li>Leverage research to solve global technological challenges.</li>
+                <li>By providing a supportive ecosystem to our learners that fosters continuous learning, education, research, and innovation in computer science and engineering.</li>
+                <li>By enhancing the skills and virtues of our learners, enabling them to understand and address societal needs through advanced technological solutions.</li>
+                <li>By leveraging the experiential learning in the field of computer science and engineering and cutting-edge research to develop innovative solutions for complex engineering and technological challenges at both national and global levels.</li>
               </ul>
             </div>
           </motion.div>

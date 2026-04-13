@@ -14,7 +14,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', to: 'about' },
+    { name: 'About Us', to: 'about' },
     { name: 'Tracks', to: 'tracks' },
     { name: 'Timeline', to: 'dates' },
     { name: 'Committee', to: 'committee' },
@@ -31,9 +31,8 @@ const Navbar = () => {
             <Link to="hero" smooth={true} className="main-nav-logo">
               <img src="/logo.png" alt="ICICRCET'26" className="nav-logo-main" />
             </Link>
-            <div className="sep-line-v"></div>
-            <img src="/logo1.png" alt="SVCE" className="nav-logo-partner" />
             <img src="/logo2.png" alt="AIMST" className="nav-logo-partner" />
+            <img src="/logo1.png" alt="SVCE" className="nav-logo-partner" />
             <img src="/know i.jpg" alt="KNOW-I" className="nav-logo-partner" />
           </div>
         </div>
@@ -140,12 +139,13 @@ const Navbar = () => {
         .nav-brand {
           display: flex;
           align-items: center;
+          margin-right: 2rem;
         }
 
         .nav-desktop {
           display: flex;
           align-items: center;
-          gap: 3rem;
+          gap: 1.5rem;
         }
 
         @media (max-width: 1024px) {
@@ -166,15 +166,13 @@ const Navbar = () => {
         }
 
         .nav-logo-main, .nav-logo-partner {
-          height: 40px;
-          width: auto;
-          transition: all 0.4s var(--ease-expo);
-          border-radius: 6px;
+          height: 55px;
+          border-radius: 4px;
           padding: 4px;
           background: #fff;
           border: 1px solid rgba(255, 255, 255, 0.2);
           box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-          opacity: 0.92;
+          opacity: 0.95;
         }
 
         .nav-logo-main:hover, .nav-logo-partner:hover {
@@ -184,9 +182,7 @@ const Navbar = () => {
           border-color: var(--neon-blue);
         }
 
-        .nav-logo-main {
-          height: 48px;
-        }
+
 
         .sep-line-v {
           width: 1px;
@@ -196,7 +192,7 @@ const Navbar = () => {
 
         .nav-links-wrap {
           display: flex;
-          gap: 2.5rem;
+          gap: 1.5rem;
         }
 
         .nav-link {
@@ -244,6 +240,9 @@ const Navbar = () => {
 
         @media (max-width: 1024px) {
           .mobile-toggle { display: block; }
+          .nav-logo-main { height: 45px; }
+          .nav-logo-partner { height: 35px; }
+          .nav-logos-group { gap: 0.8rem; }
         }
 
         .mobile-menu {

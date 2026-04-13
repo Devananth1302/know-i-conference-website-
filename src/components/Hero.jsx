@@ -17,7 +17,6 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="hero-badge"
         >
-          <Sparkles size={16} className="text-yellow-400" />
           <span>MAY 5, 2026 • HYBRID MODE</span>
         </motion.div>
 
@@ -38,17 +37,20 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hero-tagline"
         >
-          2nd International Conference on Innovative Computing, Research and Cutting Edge Technologies in Computer Science and Engineering
+          2<sup>nd</sup> International Conference on Innovative Computing, Research and Cutting Edge Technologies in Computer Science and Engineering
         </motion.p>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="hero-subline"
+          className="hero-subline-vibrant"
+          style={{ lineHeight: 1.3, display: 'block' }}
         >
-          In association with AIMST University Malaysia
-        </motion.p>
+          <div style={{ fontWeight: 400, fontSize: '1rem', textTransform: 'none', opacity: 0.8 }}>in association with</div>
+          <div style={{ height: '0.7em' }}></div>
+          <div style={{ fontWeight: 800, fontSize: '2.1rem', letterSpacing: 0.5 }}>AIMST UNIVERSITY, MALAYSIA</div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,16 +58,8 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-actions"
         >
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSco5TtEb430BAfDCEh9kOXTKZiqmcAjEeBOoe8zd3fbT9vU0w/viewform" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-modern btn-primary"
-          >
-            RESERVE YOUR SPOT <ArrowRight size={20} />
-          </a>
-          <a href="/ICICRCET'26  Brochure.pdf" download className="brochure-btn">
-            <div className="brochure-icon">
+          <a href="/ICICRCET'26  Brochure.pdf" download className="brochure-btn-vibrant">
+            <div className="brochure-icon-vibrant">
               <Download size={20} />
             </div>
             <span>DOWNLOAD BROCHURE</span>
@@ -151,10 +145,12 @@ const Hero = () => {
 
         .title-top {
           display: block;
-          font-size: clamp(1.2rem, 3vw, 2.5rem);
+          font-size: clamp(1rem, 2.5vw, 2.2rem);
           font-weight: 300;
-          letter-spacing: 0.3em;
+          letter-spacing: 0.2rem;
           color: var(--text-secondary);
+          white-space: nowrap;
+          text-align: center;
         }
 
         .title-focus {
@@ -173,15 +169,16 @@ const Hero = () => {
           font-weight: 500;
         }
 
-        .hero-subline {
-          max-width: 800px;
-          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-          color: var(--neon-blue);
-          margin-bottom: 4rem;
+        .hero-subline-vibrant {
+          max-width: 900px;
+          font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+          color: white;
+          margin-bottom: 4.5rem;
           line-height: 1.8;
-          font-weight: 600;
-          letter-spacing: 0.1em;
+          font-weight: 900;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
+          text-shadow: 0 0 30px rgba(0, 234, 255, 0.6);
         }
 
         .hero-actions {
@@ -191,33 +188,38 @@ const Hero = () => {
           margin-bottom: 6rem;
         }
 
-        .brochure-btn {
+        .brochure-btn-vibrant {
           display: flex;
           align-items: center;
           gap: 1rem;
           cursor: pointer;
           transition: all 0.3s ease;
+          background: var(--neon-pink);
+          padding: 0.8rem 2rem;
+          border-radius: 100px;
+          color: white;
+          box-shadow: 0 10px 25px rgba(255, 0, 128, 0.3);
         }
 
-        .brochure-btn:hover {
-          color: var(--neon-pink);
+        .brochure-btn-vibrant:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(255, 0, 128, 0.5);
         }
 
-        .brochure-icon {
-          width: 60px;
-          height: 60px;
+        .brochure-icon-vibrant {
+          width: 35px;
+          height: 35px;
           border-radius: 50%;
-          border: 1px solid var(--glass-border);
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.2);
         }
 
-        .brochure-btn span {
-          font-weight: 700;
+        .brochure-btn-vibrant span {
+          font-weight: 800;
           letter-spacing: 0.1em;
-          font-size: 0.8rem;
+          font-size: 0.85rem;
         }
 
         .partner-strip {

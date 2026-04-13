@@ -8,25 +8,16 @@ const Footer = () => {
       <div className="container">
         <div className="footer-main">
           <div className="footer-brand-hub">
-            <div className="footer-logos-group">
-              <Link to="hero" smooth={true} className="footer-logo">
-                <img src="/logo.png" alt="ICICRCET'26" className="logo-img-footer-main" />
-              </Link>
-              <div className="sep-line-v-footer"></div>
-              <img src="/logo1.png" alt="SVCE" className="logo-img-footer-partner" />
-              <img src="/logo2.png" alt="AIMST" className="logo-img-footer-partner" />
-              <img src="/know i.jpg" alt="KNOW-I" className="logo-img-footer-partner" />
-            </div>
+            <h3 className="footer-title-text">ICICRCET'26</h3>
             <p className="footer-tagline">
-              2nd International Conference on Innovative Computing, Research and Cutting Edge Technologies. Catalyzing global research through elite academic collaboration.
+              2<sup>nd</sup> International Conference on Innovative Computing, Research and Cutting Edge Technologies in Computer Science and Engineering.
             </p>
-
           </div>
 
           <div className="footer-info-rack">
             <div className="info-col">
               <h5>NAVIGATION</h5>
-              <Link to="about" smooth={true}>About</Link>
+              <Link to="about" smooth={true}>About Us</Link>
               <Link to="tracks" smooth={true}>Tracks</Link>
               <Link to="timeline" smooth={true}>Timeline</Link>
               <Link to="committee" smooth={true}>Committee</Link>
@@ -81,24 +72,15 @@ const Footer = () => {
           margin-bottom: 2.5rem;
         }
 
-        .logo-img-footer-main, .logo-img-footer-partner {
-          height: 40px;
-          width: auto;
-          object-fit: contain;
-          background: white;
-          padding: 4px;
-          border-radius: 6px;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-
-        .logo-img-footer-main {
-          height: 45px;
-        }
-
-        .sep-line-v-footer {
-          width: 1px;
-          height: 30px;
-          background: var(--glass-border);
+        .footer-title-text {
+          font-family: var(--font-heading);
+          font-weight: 900;
+          font-size: 2rem;
+          background: linear-gradient(to right, var(--neon-blue), var(--neon-pink));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 2rem;
+          letter-spacing: -1px;
         }
 
         .footer-tagline {
