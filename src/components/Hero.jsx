@@ -74,7 +74,7 @@ const Hero = () => {
           min-height: 100vh;
           display: flex;
           align-items: center;
-          padding-top: 120px;
+          padding-top: 200px;
           overflow: hidden;
         }
 

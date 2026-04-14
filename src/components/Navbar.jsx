@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -25,19 +25,26 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed-nav ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-        <div className="nav-brand">
-          <div className="nav-logos-group">
-            <Link to="hero" smooth={true} className="main-nav-logo">
-              <img src="/logo.png" alt="ICICRCET'26" className="nav-logo-main" style={{ height: '88px' }} />
-            </Link>
-            <img src="/logo2.png" alt="AIMST" className="nav-logo-partner" />
-            <img src="/logo1.png" alt="SVCE" className="nav-logo-partner" />
-            <img src="/know i.jpg" alt="KNOW-I" className="nav-logo-partner" style={{ height: '90px' }} />
-          </div>
+      
+      {/* Top Row: Full Width White Strip for Logos */}
+      <div className="nav-logos-strip">
+        <div className="nav-logos-top">
+          <Link to="hero" smooth={true} className="main-nav-logo">
+            <img src="/logo.png" alt="ICICRCET'26" className="nav-logo-uniform" />
+          </Link>
+          <img src="/logo2.png" alt="AIMST" className="nav-logo-uniform" />
+          <img src="/logo1.png" alt="SVCE" className="nav-logo-uniform" />
+          <img src="/know i.jpg" alt="KNOW-I" className="nav-logo-uniform" />
+          
+          <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={32} color="#002244" /> : <Menu size={32} color="#002244" />}
+          </button>
         </div>
+      </div>
 
-        <div className="nav-desktop">
+      <div className="nav-container-vertical">
+        {/* Bottom Row: Centered Navigation & Button */}
+        <div className="nav-desktop-bottom">
           <div className="nav-links-wrap">
             {navLinks.map((link) => (
               <Link
@@ -55,22 +62,16 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-
           <a 
             href={REG_LINK}
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn-modern nav-btn btn-black"
+            className="btn-modern nav-btn btn-color-matching"
             style={{ whiteSpace: 'nowrap' }}
           >
             REGISTER NOW
           </a>
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -84,7 +85,7 @@ const Navbar = () => {
             className="mobile-menu"
           >
             <div className="mobile-menu-header">
-               <span className="mobile-header-text">CONFERENCE PAPER PRESENTATION</span>
+               <span className="mobile-header-text">ICICRCET'26 MENU</span>
             </div>
             <div className="mobile-menu-links">
               {navLinks.map((link) => (
@@ -104,7 +105,7 @@ const Navbar = () => {
                 href={REG_LINK}
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-modern btn-black w-full mt-4 text-center"
+                className="btn-modern btn-color-matching w-full mt-4 text-center"
               >
                 REGISTER NOW
               </a>
@@ -121,94 +122,79 @@ const Navbar = () => {
           width: 100%;
           z-index: 1000;
           transition: all 0.4s var(--ease-expo);
-          padding: 0;
-          background: #ffffff;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          /* Match main page color / transparent at top for immersion */
+          background: transparent;
+          box-shadow: none; 
+          border-bottom: 1px solid transparent;
         }
 
         .fixed-nav.scrolled {
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(2, 2, 5, 0.90);
           backdrop-filter: blur(20px);
-          padding: 0;
-          border-bottom: 1px solid rgba(0,0,0,0.1);
+          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5); 
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .nav-container {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          max-width: 100%;
+        .nav-logos-strip {
+          background: #ffffff;
           width: 100%;
-          padding-left: 1rem;
-          padding-right: 1.5rem;
+          border-bottom: 2px solid rgba(0, 50, 100, 0.05); /* Subtle frame */
         }
 
-        .nav-brand {
+        .nav-container-vertical {
           display: flex;
-          align-items: center;
-          margin-right: 3rem;
+          flex-direction: column;
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 0.8rem 2rem;
+          gap: 0;
         }
 
-        .nav-desktop {
+        .nav-logos-top {
           display: flex;
-          align-items: center;
+          width: 100%;
           justify-content: space-between;
-          flex: 1;
-        }
-
-        @media (max-width: 1024px) {
-          .nav-desktop { display: none; }
-          .fixed-nav { padding: 1.5rem 0; }
-        }
-
-        .nav-logos-group {
-          display: flex;
           align-items: center;
-          gap: 1.2rem;
+          position: relative;
+          padding: 0.6rem 2rem;
         }
 
         .main-nav-logo {
-          display: flex;
-          align-items: center;
           cursor: pointer;
         }
 
-        .nav-logo-main, .nav-logo-partner {
-          height: 75px;
-          border-radius: 4px;
-          padding: 2px;
-          background: transparent;
-          border: none;
-          box-shadow: none;
-          opacity: 1;
+        .nav-logo-uniform {
+          height: 100px;
           object-fit: contain;
           transition: transform 0.3s ease;
+          border-radius: 4px;
+          mix-blend-mode: multiply; /* Works perfectly on the white strip */
         }
 
-        .nav-logo-main:hover, .nav-logo-partner:hover {
-          transform: translateY(-2px);
-          opacity: 0.9;
+        .nav-logo-uniform:hover {
+          transform: scale(1.05);
         }
 
-
-
-        .sep-line-v {
-          width: 1px;
-          height: 30px;
-          background: var(--glass-border);
+        .nav-desktop-bottom {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 3.5rem;
+          width: 100%;
         }
 
         .nav-links-wrap {
           display: flex;
-          gap: 1.2rem;
-          flex-wrap: wrap;
+          gap: 3rem;
+          align-items: center;
         }
 
         .nav-link {
           position: relative;
-          color: #333333;
+          color: rgba(255, 255, 255, 0.85); /* Light text against dark bg */
           font-weight: 800;
-          font-size: 0.85rem;
+          font-size: 0.95rem;
           letter-spacing: 0.05em;
           text-transform: uppercase;
           cursor: pointer;
@@ -217,16 +203,16 @@ const Navbar = () => {
         }
 
         .nav-link:hover, .nav-link.active {
-          color: var(--neon-blue);
+          color: #00eaff; /* Neon tech blue */
         }
 
         .underline {
           position: absolute;
-          bottom: -5px;
+          bottom: -6px;
           left: 0;
           width: 0;
           height: 2px;
-          background: var(--neon-blue);
+          background: #00eaff;
           transition: width 0.3s ease;
         }
 
@@ -235,42 +221,69 @@ const Navbar = () => {
         }
 
         .nav-btn {
-          padding: 0.35rem 0.9rem;
-          font-size: 0.7rem;
+          padding: 0.6rem 1.6rem;
+          font-size: 0.8rem;
           text-decoration: none;
           flex-shrink: 0;
-          font-weight: 800;
+          font-weight: 900;
+          letter-spacing: 0.05em;
         }
 
-        .btn-black {
-          background: #000;
-          color: #fff;
-          border: 1.5px solid #000;
+        /* Color matching button utilizing glass-neon core colors */
+        .btn-color-matching {
+          background: rgba(255, 255, 255, 0.1); 
+          color: #ffffff !important; 
+          border: 1px solid rgba(255, 255, 255, 0.3);
           transition: all 0.3s ease;
           border-radius: 6px;
         }
 
-        .btn-black:hover {
-          background: #333;
-          border-color: #333;
-          color: white;
+        .btn-color-matching:hover {
+          background: #00eaff; /* Bright neon blue hover */
+          border-color: #00eaff;
+          color: #000000 !important; /* Invert text to punchy black */
           transform: translateY(-2px);
+          box-shadow: 0 6px 15px rgba(0, 234, 255, 0.3);
         }
 
         .mobile-toggle {
           display: none;
           background: none;
           border: none;
-          color: #333333;
           cursor: pointer;
         }
 
         @media (max-width: 1024px) {
-          .mobile-toggle { display: block; }
-          .nav-logo-main { height: 55px; }
-          .nav-logo-partner { height: 45px; }
-          .nav-logos-group { gap: 0.4rem; }
-          .nav-container { justify-content: space-between; padding-left: 1.5rem; padding-right: 1.5rem; }
+          .nav-container-vertical {
+            padding: 1rem 1.5rem;
+            gap: 1rem;
+          }
+          
+          .nav-logos-top {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding-right: 4rem; /* Buffer for absolute toggle icon */
+            padding-left: 1.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+          }
+
+          .nav-logo-uniform { 
+            height: 60px; /* appropriately scaled for mobile vertical layout */
+          }
+
+          .nav-desktop-bottom {
+            display: none;
+          }
+
+          .mobile-toggle { 
+            display: block; 
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
 
         .mobile-menu {
@@ -279,26 +292,25 @@ const Navbar = () => {
           right: 0;
           width: 300px;
           height: 100vh;
-          background: rgba(2, 2, 5, 0.95);
-          backdrop-filter: blur(40px);
+          background: rgba(2, 2, 5, 0.98); /* Deep dark theme matched */
           z-index: 1001;
           padding: 6rem 2rem;
-          border-left: 1px solid var(--glass-border);
+          box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(20px);
         }
 
         .mobile-menu-header {
           margin-bottom: 3.5rem;
           padding-bottom: 1.5rem;
-          border-bottom: 1px solid var(--glass-border);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .mobile-header-text {
           font-family: var(--font-heading);
           font-weight: 900;
-          font-size: 0.9rem;
-          letter-spacing: 0.1em;
-          color: var(--neon-blue);
-          text-transform: uppercase;
+          font-size: 0.95rem;
+          letter-spacing: 0.08em;
+          color: #00eaff;
         }
 
         .mobile-menu-links {
@@ -308,17 +320,16 @@ const Navbar = () => {
         }
 
         .mobile-link {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           font-weight: 800;
-          color: var(--text-secondary);
+          color: rgba(255, 255, 255, 0.9);
           text-transform: uppercase;
-          letter-spacing: 0.05em;
           cursor: pointer;
           transition: color 0.3s ease;
         }
 
         .mobile-link:hover {
-          color: var(--neon-blue);
+          color: #00eaff; 
         }
       `}</style>
     </nav>
