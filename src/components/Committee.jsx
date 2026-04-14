@@ -12,12 +12,16 @@ const committee = {
     { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL , SVCE", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
   ],
   convenors: [
-    { name: "DR. R. ANITHA", role: "CONVENOR", dept: "HOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "RA", image: "/staffs/Anitha.png", linkedin: "https://www.linkedin.com/in/anithabalajim/" },
-    { name: "DR. N. RAJGANESH", role: "CONVENOR", dept: "AHOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "NR", image: "/staffs/Rajganesh.png", linkedin: "https://www.linkedin.com/in/dr-rajganesh-n-77b00a224/" }
+    { name: "DR. R. ANITHA", role: "CONVENOR", dept: "HOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "RA", image: "/staffs/Anitha.png", linkedin: "https://www.linkedin.com/in/anithabalajim/" }
+  ],
+  coConvenors: [
+    { name: "DR. N. RAJGANESH", role: "CO-CONVENOR", dept: "AHOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "NR", image: "/staffs/Rajganesh.png", linkedin: "https://www.linkedin.com/in/dr-rajganesh-n-77b00a224/" }
   ],
   coordinators: [
     { name: "MS. R. K. KAPILA VANI", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-blue)", initials: "KV", image: "/staffs/Kapila Vani.png", linkedin: "https://www.linkedin.com/in/r-k-kapila-vani-b751b492/" },
-    { name: "MR. P. SELVAMANI", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-pink)", initials: "PS", image: "/staffs/Selvamani.png", linkedin: "https://www.linkedin.com/in/selvamani-p-22051a1bb/" },
+    { name: "MR. P. SELVAMANI", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-pink)", initials: "PS", image: "/staffs/Selvamani.png", linkedin: "https://www.linkedin.com/in/selvamani-p-22051a1bb/" }
+  ],
+  coCoordinators: [
     { name: "MS. V. RADHA", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-purple)", initials: "VR", image: "/staffs/radha.webp", linkedin: "https://www.linkedin.com/in/radha-v-3186a8214/" },
     { name: "MR. V. KRISHNAMOORTHY", role: "ASST. PROFESSOR/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "VK", image: "/staffs/Krishnamoorthy.png", linkedin: "https://www.linkedin.com/in/krishnamoorthy-v-1bb90a118/" }
   ],
@@ -112,17 +116,33 @@ const Committee = () => {
 
           {/* Convenors */}
           <div className="hierarchy-row">
-            <div className="row-label">CONVENORS</div>
-            <div className="members-grid dual">
+            <div className="row-label">CONVENOR</div>
+            <div className="members-grid single">
               {committee.convenors.map((m, i) => <MemberCard key={i} member={m} />)}
+            </div>
+          </div>
+
+          {/* Co-Convenors */}
+          <div className="hierarchy-row">
+            <div className="row-label">CO-CONVENOR</div>
+            <div className="members-grid single">
+              {committee.coConvenors.map((m, i) => <MemberCard key={i} member={m} />)}
             </div>
           </div>
 
           {/* Coordinators */}
           <div className="hierarchy-row">
             <div className="row-label">COORDINATORS</div>
-            <div className="members-grid quad">
+            <div className="members-grid dual">
               {committee.coordinators.map((m, i) => <MemberCard key={i} member={m} />)}
+            </div>
+          </div>
+
+          {/* Co-Coordinators */}
+          <div className="hierarchy-row">
+            <div className="row-label">CO-COORDINATORS</div>
+            <div className="members-grid dual">
+              {committee.coCoordinators.map((m, i) => <MemberCard key={i} member={m} />)}
             </div>
           </div>
 

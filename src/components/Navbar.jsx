@@ -29,11 +29,11 @@ const Navbar = () => {
         <div className="nav-brand">
           <div className="nav-logos-group">
             <Link to="hero" smooth={true} className="main-nav-logo">
-              <img src="/logo.png" alt="ICICRCET'26" className="nav-logo-main" />
+              <img src="/logo.png" alt="ICICRCET'26" className="nav-logo-main" style={{ height: '88px' }} />
             </Link>
             <img src="/logo2.png" alt="AIMST" className="nav-logo-partner" />
             <img src="/logo1.png" alt="SVCE" className="nav-logo-partner" />
-            <img src="/know i.jpg" alt="KNOW-I" className="nav-logo-partner" />
+            <img src="/know i.jpg" alt="KNOW-I" className="nav-logo-partner" style={{ height: '90px' }} />
           </div>
         </div>
 
@@ -60,7 +60,8 @@ const Navbar = () => {
             href={REG_LINK}
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn-modern btn-primary nav-btn"
+            className="btn-modern nav-btn btn-black"
+            style={{ whiteSpace: 'nowrap' }}
           >
             REGISTER NOW
           </a>
@@ -103,7 +104,7 @@ const Navbar = () => {
                 href={REG_LINK}
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-modern btn-primary w-full mt-4 text-center"
+                className="btn-modern btn-black w-full mt-4 text-center"
               >
                 REGISTER NOW
               </a>
@@ -120,32 +121,39 @@ const Navbar = () => {
           width: 100%;
           z-index: 1000;
           transition: all 0.4s var(--ease-expo);
-          padding: 2rem 0;
+          padding: 0;
+          background: #ffffff;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .fixed-nav.scrolled {
-          background: rgba(2, 2, 5, 0.85);
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(20px);
-          padding: 1.2rem 0;
-          border-bottom: 1px solid var(--glass-border);
+          padding: 0;
+          border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
         .nav-container {
           display: flex;
-          justify-content: space-between;
+          justify-content: flex-start;
           align-items: center;
+          max-width: 100%;
+          width: 100%;
+          padding-left: 1rem;
+          padding-right: 1.5rem;
         }
 
         .nav-brand {
           display: flex;
           align-items: center;
-          margin-right: 2rem;
+          margin-right: 3rem;
         }
 
         .nav-desktop {
           display: flex;
           align-items: center;
-          gap: 1.5rem;
+          justify-content: space-between;
+          flex: 1;
         }
 
         @media (max-width: 1024px) {
@@ -166,20 +174,20 @@ const Navbar = () => {
         }
 
         .nav-logo-main, .nav-logo-partner {
-          height: 55px;
+          height: 75px;
           border-radius: 4px;
-          padding: 4px;
-          background: #fff;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-          opacity: 0.95;
+          padding: 2px;
+          background: transparent;
+          border: none;
+          box-shadow: none;
+          opacity: 1;
+          object-fit: contain;
+          transition: transform 0.3s ease;
         }
 
         .nav-logo-main:hover, .nav-logo-partner:hover {
           transform: translateY(-2px);
-          opacity: 1;
-          box-shadow: 0 8px 25px rgba(0, 234, 255, 0.4);
-          border-color: var(--neon-blue);
+          opacity: 0.9;
         }
 
 
@@ -192,22 +200,24 @@ const Navbar = () => {
 
         .nav-links-wrap {
           display: flex;
-          gap: 1.5rem;
+          gap: 1.2rem;
+          flex-wrap: wrap;
         }
 
         .nav-link {
           position: relative;
-          color: var(--text-secondary);
-          font-weight: 700;
-          font-size: 0.9rem;
+          color: #333333;
+          font-weight: 800;
+          font-size: 0.85rem;
           letter-spacing: 0.05em;
           text-transform: uppercase;
           cursor: pointer;
           transition: color 0.3s ease;
+          white-space: nowrap;
         }
 
         .nav-link:hover, .nav-link.active {
-          color: white;
+          color: var(--neon-blue);
         }
 
         .underline {
@@ -225,24 +235,42 @@ const Navbar = () => {
         }
 
         .nav-btn {
-          padding: 0.7rem 1.8rem;
-          font-size: 0.8rem;
+          padding: 0.35rem 0.9rem;
+          font-size: 0.7rem;
           text-decoration: none;
+          flex-shrink: 0;
+          font-weight: 800;
+        }
+
+        .btn-black {
+          background: #000;
+          color: #fff;
+          border: 1.5px solid #000;
+          transition: all 0.3s ease;
+          border-radius: 6px;
+        }
+
+        .btn-black:hover {
+          background: #333;
+          border-color: #333;
+          color: white;
+          transform: translateY(-2px);
         }
 
         .mobile-toggle {
           display: none;
           background: none;
           border: none;
-          color: white;
+          color: #333333;
           cursor: pointer;
         }
 
         @media (max-width: 1024px) {
           .mobile-toggle { display: block; }
-          .nav-logo-main { height: 45px; }
-          .nav-logo-partner { height: 35px; }
-          .nav-logos-group { gap: 0.8rem; }
+          .nav-logo-main { height: 55px; }
+          .nav-logo-partner { height: 45px; }
+          .nav-logos-group { gap: 0.4rem; }
+          .nav-container { justify-content: space-between; padding-left: 1.5rem; padding-right: 1.5rem; }
         }
 
         .mobile-menu {
