@@ -97,19 +97,19 @@ const Committee = () => {
         </div>
 
         <div className="committee-hierarchy">
-          {/* Patron */}
-          <div className="hierarchy-row">
-            <div className="row-label">PATRON</div>
-            <div className="members-grid single">
-              {committee.patron.map((m, i) => <MemberCard key={i} member={m} />)}
-            </div>
-          </div>
-
           {/* Chief Patrons */}
           <div className="hierarchy-row">
             <div className="row-label">CHIEF PATRONS</div>
             <div className="members-grid triple">
               {committee.chiefPatrons.map((m, i) => <MemberCard key={i} member={m} />)}
+            </div>
+          </div>
+
+          {/* Patron */}
+          <div className="hierarchy-row">
+            <div className="row-label">PATRON</div>
+            <div className="members-grid single">
+              {committee.patron.map((m, i) => <MemberCard key={i} member={m} />)}
             </div>
           </div>
 
