@@ -8,7 +8,7 @@ const About = () => {
   const content = {
     college: {
       title: "ABOUT THE COLLEGE",
-      text: "Sri Venkateswara College of Engineering (Autonomous), a premier self-financing engineering college, was established in 1985 and is managed by the Sri Venkateswara Educational and Health Trust. The college offers 12 undergraduate programs and 7 postgraduate programs in Engineering and Technology. These programs are approved by AICTE and affiliated with Anna University, Chennai. The college attained autonomous status in 2016 and was accredited by the National Assessment and Accreditation Council (NAAC) with an A+ Grade in 2022. The National Board of Accreditation has accredited many of the eligible programs. The college is an ISO 21001:2018 certified institution.",
+      text: "Sri Venkateswara College of Engineering (Autonomous), a premier self-financing engineering college, was established in 1985 and is managed by the Sri Venkateswara Educational and Health Trust. The college offers 11 undergraduate programs and 8 postgraduate programs in Engineering and Technology. These programs are approved by AICTE and affiliated with Anna University, Chennai. The college attained autonomous status in 2016 and was accredited by the National Assessment and Accreditation Council (NAAC) with an A+ Grade in 2022. The National Board of Accreditation has accredited many of the eligible programs. The college is an ISO 21001:2018 certified institution.",
       icon: <School size={24} />
     },
     department: {
@@ -110,6 +110,16 @@ const About = () => {
               </ul>
             </div>
           </motion.div>
+        </div>
+      </div>
+
+      <div className="news-ticker-section">
+        <div className="ticker-wrapper">
+          <div className="ticker-content">
+            <span className="ticker-text"><strong>Accepted and presented papers will be submitted to UGC journals.</strong></span>
+            <span className="ticker-text"><strong>Accepted and presented papers will be submitted to UGC journals.</strong></span>
+            <span className="ticker-text"><strong>Accepted and presented papers will be submitted to UGC journals.</strong></span>
+          </div>
         </div>
       </div>
 
@@ -294,6 +304,60 @@ const About = () => {
           .about-tabs { flex-direction: column; }
           .floating-card-alt { flex-direction: column; text-align: center; align-items: center; gap: 1.5rem; }
           .mission-list-alt li { text-align: left; }
+        }
+
+        /* News Ticker Styles */
+        .news-ticker-section {
+          background: linear-gradient(135deg, rgba(255, 0, 128, 0.1) 0%, rgba(0, 234, 255, 0.1) 100%);
+          padding: 2.5rem;
+          margin-top: 6rem;
+          border-top: 2px solid var(--glass-border);
+          border-bottom: 2px solid var(--glass-border);
+          overflow: hidden;
+        }
+
+        .ticker-wrapper {
+          width: 100%;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 15px;
+          padding: 1.5rem 0;
+          border: 1px solid var(--glass-border);
+        }
+
+        .ticker-content {
+          display: inline-flex;
+          animation: scroll-right 20s linear infinite;
+          white-space: nowrap;
+          gap: 0;
+        }
+
+        .ticker-text {
+          font-size: 1.3rem;
+          color: var(--neon-pink);
+          font-weight: 700;
+          display: inline-block;
+          padding: 0 3rem;
+          letter-spacing: 0.05em;
+          flex-shrink: 0;
+        }
+
+        @keyframes scroll-right {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .ticker-text {
+            font-size: 1rem;
+          }
+          .ticker-content {
+            animation: scroll-left 12s linear infinite;
+          }
         }
       `}</style>
     </section>
