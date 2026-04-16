@@ -4,11 +4,11 @@ import { User, Mail, Linkedin } from 'lucide-react';
 
 const committee = {
   patron: [
-    { name: "DR. A. C. MUTHIAH", role: "CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-pink)", initials: "AM", image: "/staffs/a c muthaiah.png" }
+    { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL , SVCE", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
   ],
   chiefPatrons: [
-    { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" },
-    { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL , SVCE", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
+    { name: "DR. A. C. MUTHIAH", role: "CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-pink)", initials: "AM", image: "/staffs/a c muthaiah.png" },
+    { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" }
   ],
   convenors: [
     { name: "DR. R. ANITHA", role: "CONVENOR", dept: "HOD/CSE", org: "SVCE", color: "var(--neon-lime)", initials: "RA", image: "/staffs/Anitha.png", linkedin: "https://www.linkedin.com/in/anithabalajim/" }
