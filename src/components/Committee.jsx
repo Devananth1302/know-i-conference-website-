@@ -8,7 +8,6 @@ const committee = {
   ],
   chiefPatrons: [
     { name: "SHRI. ASHWIN C. MUTHIAH", role: "CHAIRMAN, SPIC LTD / VICE CHAIRMAN, GOVERNING COUNCIL, SVCE", org: "SVCE", color: "var(--neon-blue)", initials: "ACM", image: "/staffs/ASHWIN C. MUTHIAH.png" },
-    { name: "DR. M. SIVANANDHAM", role: "SECRETARY, SVEHT", org: "SVCE", color: "var(--neon-purple)", initials: "MS", image: "/staffs/sivanandham.png" },
     { name: "PROF. DR. E.N. GANESH", role: "PRINCIPAL , SVCE", org: "SVCE", color: "var(--neon-purple)", initials: "EG", image: "/staffs/E.N. GANESH.png" }
   ],
   convenors: [
@@ -209,7 +208,7 @@ const Committee = () => {
         }
 
         .dual { grid-template-columns: repeat(2, 1fr); max-width: 1000px; }
-        .triple { grid-template-columns: repeat(3, 1fr); max-width: 1200px; }
+        .triple { grid-template-columns: repeat(2, 1fr); max-width: 1000px; place-items: center; }
         .single { grid-template-columns: 1fr; max-width: 500px; }
         .quad { grid-template-columns: repeat(2, 1fr); }
 
